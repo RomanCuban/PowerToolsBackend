@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.login-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(150.36deg, #0059ff 18.13%, #619ffd 84.81%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 600px;
+  height: 550px;
+  padding: 20px;
+  background: rgba(99, 198, 255, 0.952);
+  border: 2px solid #000000;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  margin-right: 350px;
+  display: block;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+#email-label-id {
+  margin-right: 375px;
+}
+
+.input-field {
+  width: 70%;
+  height: 25px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  background-color: rgba(99, 198, 255, 0.952);
+  transition: 0.25s;
+}
+
+.input-field:focus {
+  border: 1.5px solid #000000;
+  box-shadow: 0 0 5px #000000; /* Тень при фокусе */
+  outline: none;
+}
+
+.checkbox,
+.checkbox-label {
+  display: inline-block;
+  margin-right: -17px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+/* Hide the default checkbox */
+.checkbox {
+  display: none;
+}
+
+/* Create a new checkbox */
+.checkbox + .checkbox-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* Checkbox after hiding the default one */
+.checkbox + .checkbox-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #000000; /* Black border */
+  border-radius: 3px;
+}
+
+/* Checkmark when checkbox is checked */
+.checkbox:checked + .checkbox-label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 10px;
+  height: 13px;
+  border: solid #ffffff;
+  border-width: 0px 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Checkbox when checked */
+.checkbox:checked + .checkbox-label:before {
+  background: #000000; /* Black background */
+}
+
+.login-button {
+  margin-top: 10px;
+  width: 18%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  background: rgba(61, 74, 185, 0.87);
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login-button:hover {
+  background-color: #004cbf;
+  outline: none;
+}
+
+.register-link {
+  margin-top: 10px;
+}
+
+.register-link a {
+  font-size: 20px;
+  color: #000000; /* Black color */
+  text-decoration: none;
+}

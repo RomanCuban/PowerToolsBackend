@@ -1,0 +1,169 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power</title>
+    <link rel="stylesheet" href="~/css/homepage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&family=Hepta+Slab:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100..900&display=swap"
+          rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/img/logotab.png" />
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="~/img/logo.png" alt="logo" />
+            </div>
+            <div class="nav-links">
+                <div class="nav-links">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <button class="user"></button>
+                    }
+                    else
+                    {
+                        <a class="nav-sign" href="Login">Login</a>
+                    }
+                </div>
+
+            </div>
+        </div>
+        <div class="header">
+            <h1>@Model.Huina</h1>
+            <div class="tools_img"></div>
+        </div>
+    </div>
+    <div class="instruments">
+        <p>Instruments that could help you!</p>
+        <div class="tools">
+            @foreach (var tool in Model.tools)
+            {
+                <div class="tool_wrapper"
+                     data-pdf="/pdf/hui21441.pdf"
+                     data-image=@tool.LinktoImage
+                     data-first-image="/img/voltage.svg"
+                     data-second-image="/img/capacity.svg"
+                     data-third-image="/img/torque.svg"
+                     data-fourth-image="/img/chuck.svg"
+                     data-fifth-image="/img/speed.svg"
+                     data-sixth-image="/img/settings.svg"
+                     data-spec-title="@tool.FirstSpecs"
+                     data-spec-title-2="@tool.SecondSpecs"
+                     data-spec-title-3="@tool.ThirdSpecs"
+                     data-spec-title-4="@tool.FourthSpecs"
+                     data-spec-title-5="@tool.FifthSpecs"
+                     data-spec-title-6="@tool.SixthSpecs"
+                     data-paragraph-1="@tool.Title"
+                     data-slider-image-1="@tool.FirstSlide"
+                     data-slider-image-2="@tool.SecondSlide"
+                     data-slider-image-3="@tool.ThirdSlide"
+                     data-slider-image-4="@tool.FourthSlide"
+                     data-paragraph-2="@tool.SecondTitle">
+                    <div class="tool_frame"
+                         style="background-image: url('@tool.LinktoImage')"></div>
+                    <p class="text-below">@tool.Name</p>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="tool-info">
+                <div class="square"></div>
+                <div class="tool-functions">
+                    <div class="tool-title"></div>
+                    <div class="additional-squares">
+                        <button class="small-square-save">Save</button>
+                        <div class="dropdown">
+                            <button class="small-square-cart">Cart</button>
+                            <div class="dropdown-content">
+                                <!-- Здесь добавьте содержимое вашего выпадающего меню -->
+                                <a href="#">Kaspi</a>
+                                <a href="#">TSSP</a>
+                                <a href="#">BOSCH</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square-second">
+                    <p class="with-image" data-spec="Voltage">Voltage</p>
+                    <p class="with-image-2" data-spec-2="Capacity">Capacity</p>
+                    <p class="with-image-3" data-spec-3="Torque">Torque</p>
+                    <p class="with-image-4" data-spec-4="Chuck">Chuck</p>
+                    <p class="with-image-5" data-spec-5="Speed">Speed</p>
+                    <p class="with-image-6" data-spec-6="Settings">Settings</p>
+                </div>
+            </div>
+            <div class="info-square">
+                <video class="video" width="640" height="360" controls>
+                    <source src="" type="video/mp4" />
+                </video>
+                <p></p>
+                <div class="slider-container">
+                    <div class="slider">
+                        <img alt="Photo 1" class="slide" />
+                        <img alt="Photo 2" class="slide" />
+                        <img alt="Photo 3" class="slide" />
+                        <img alt="Photo 4" class="slide" />
+                    </div>
+
+                    <button class="prev" onclick="prevSlide()">&#10094;</button>
+                    <button class="next" onclick="nextSlide()">&#10095;</button>
+
+                    <div class="slider-dots"></div>
+                </div>
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="userModal" class="user-modal">
+        <div class="user-modal-content">
+            <span class="user-close">&times;</span>
+            <div class="user-profile" id="userProfile">
+                <input type="file"
+                       id="imageInput"
+                       accept="image/*"
+                       style="display: none" />
+                <label for="imageInput" class="image-placeholder">
+                    <img id="userImage"
+                         src="~/path/to/default/image.jpg"/>
+                    <div class="overlay">
+                        <button class="change-image">Change Image</button>
+                        <button class="delete-image">Delete</button>
+                    </div>
+                </label>
+            </div>
+            <div class="username">@User.Identity.Name</div>
+            <div class="save-lists">
+                <div class="nolist">You did no save</div>
+            </div>
+            <form method="post" asp-page-handler="Logout" asp-route-returnUrl="/" style="display:flex;justify-content:center;margin-top: 15px;">
+                <button type="submit" class="nav-sign">Logout</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <span class="closebtn" onclick="closeNotification()">&times;</span>
+        Saved!
+    </div>
+
+    <script src="~/js/user.js"></script>
+    <script src="~/js/homepage.js"></script>
+</body>
+</html>

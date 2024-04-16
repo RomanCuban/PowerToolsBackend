@@ -1,0 +1,45 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power Tools for KZ</title>
+    <link rel="stylesheet" type="text/css" href="/css/signin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&family=Hepta+Slab:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100..900&display=swap"
+          rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/img/logotab.png" />
+</head>
+<body>
+    <div class="signin-page">
+        <form class="form-container" method="post">
+                <img src="/img/logo.png" alt="POWER TOOLS" class="logo" />
+            <div>
+                <div id="form_content_container">
+                    <div id="form_content_inner_container">
+                        <label for="username" class="input-label">Username</label>
+                        <input type="text" id="username" name="Username" class="input-field" />
+                        <label for="email" class="input-label" id="email-label-id">Email</label>
+                        <input type="email" id="email" name="Email" class="input-field" />
+                        <label for="password" class="input-label">Password</label>
+                        <input type="password" id="password" name="Password" class="input-field" />
+
+                        <div id="button_container">
+                            <button class="sign-up" type="submit">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="login-link">
+                Already have an account? <a href="/Login">Login</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

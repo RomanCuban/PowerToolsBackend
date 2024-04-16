@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.signin-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(150.36deg, #ad00ff 18.13%, #6167fd 84.81%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 600px;
+  height: 600px;
+  padding: 20px;
+  background: rgba(255, 0, 229, 0.35);
+  border: 2px solid #000000;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  margin-right: 330px;
+  display: block;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+#email-label-id {
+  margin-right: 375px;
+}
+
+.input-field {
+  width: 70%;
+  height: 25px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  background-color: rgba(255, 0, 229, 0.35);
+  transition: 0.25s;
+}
+
+.input-field:focus {
+  border: 1.5px solid #000000;
+  box-shadow: 0 0 5px #000000; /* Тень при фокусе */
+  outline: none;
+}
+
+.sign-up {
+  margin-left: 330px;
+  width: 18%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  background: rgba(252, 84, 255, 0.87);
+  color: #000000;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.sign-up:hover {
+  background-color: #ad00ff;
+  outline: none;
+}
+
+.login-link {
+  margin-top: 20px; /* Adjust this value as needed */
+}

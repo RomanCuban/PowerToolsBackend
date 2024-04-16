@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power Tools for KZ</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Germania+One&family=Hepta+Slab:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/img/logotab.png" />
+  </head>
+  <body>
+    <div class="login-page">
+      <form class="form-container" method="post">
+        <a href="/html/homepage.html">
+          <!-- Added anchor tag around the logo -->
+          <img src="/img/logo.png" alt="POWER TOOLS" class="logo" />
+        </a>
+        <label for="email" class="input-label" id="email-label-id" >Login</label>
+        <input type="email" id="email" class="input-field" name="Login"/>
+        <label for="password" class="input-label"  >Password</label>
+        <input type="password" id="password" class="input-field" name="Password"/>
+        <br />
+        <input
+          type="checkbox"
+          id="remember-me"
+          name="remember-me"
+          class="checkbox"
+        />
+        <label for="remember-me" class="checkbox-label">Remember Me</label>
+        <button class="login-button" type="submit">Login</button>
+        <p class="register-link">
+          <a href="/html/signin.html">Create Account</a>
+        </p>
+      </form>
+    </div>
+
+  </body>
+</html>
